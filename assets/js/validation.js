@@ -1,14 +1,15 @@
 $(document).ready(function(){
-    $("#signup-form").validate({
+    $("#submit-form").validate({
         rules:{
-            w3lName:{
+            Name:{
                 minlength:4,
-                maxlength:12
+                maxlength:15
             },
-            w3lSender:{
+            Sender:{
                 email:true,
 
             }
         }
     })
 })
+

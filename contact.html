@@ -18,6 +18,7 @@ Author URL: http://w3layouts.com
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css">
+  
 </head>
 
 <body>
@@ -123,19 +124,19 @@ Author URL: http://w3layouts.com
                     </div>
                 </div>
                 <div class="map-content-9">
-                    <form action="" method="post" id="signup-form">
+                    <form id="submit-form" action="">
                         <div class="twice">
-                            <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="Name" required="true" >
+                            <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" required="true" >
                         </div>
                         <div class="twice">
-                          <input type="email" class="form-control" name="w3lSender" id="w3lSender" required="true" placeholder="Email">
+                          <input type="email" class="form-control" name="Sender" id="Sender" required="true" placeholder="Email">
                         </div>
                         <div class="twice">
-                            <input type="text" class="form-control" name="w3lSubject" id="w3lSubject" required="true" placeholder="Subject">
+                            <input type="text" class="form-control" name="Subject" id="Subject" required="true" placeholder="Subject">
                         </div>
-                        <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message" required="true"></textarea>
+                        <textarea name="Message" class="form-control" id="Message" placeholder="Message" required="true"></textarea>
                         <div class="text-right">
-                            <button type="submit" class="btn btn-primary btn-style mt-4">Send Message</button>
+                            <button type="submit" value="submit" class="btn btn-primary btn-style mt-4">Send Message</button>
                         </div>
                     </form>
                 </div>
@@ -144,6 +145,8 @@ Author URL: http://w3layouts.com
     </div>
 </section>
 <!-- /contact1 -->
+
+
 <div class="map-iframe">
     <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.2042825111835!2d75.88045021474639!3d11.17250525481291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb5fe5b9da1372f65!2zMTHCsDEwJzIxLjAiTiA3NcKwNTInNTcuNSJF!5e0!3m2!1sen!2sin!4v1662430793547!5m2!1sen!2sin"
@@ -199,6 +202,7 @@ Author URL: http://w3layouts.com
 <!-- //Footer -->
 
 <!-- all js scripts and files here -->
+
 
 <script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
 
@@ -407,6 +411,26 @@ Author URL: http://w3layouts.com
 
 <!-- bootstrap js -->
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $("#submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycbyH35rgyQEoh-lVtvI72TWrsu7_URevZaLx4xfETm_BPVQjLx7HEkdEBsX2RqEl7FhC2w/exec",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Thanks for Your valualable message")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
+      })
+  })
+</script><!---------//--form submission---script-->
 
 </body>
 
