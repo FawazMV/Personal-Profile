@@ -2,21 +2,13 @@ $(document).ready(function(){
     $("#signup-form").validate({
         rules:{
             w3lName:{
-                required:true,
                 minlength:4,
                 maxlength:12
             },
             w3lSender:{
-                required:true,
                 email:true,
 
-            },
-            w3lSubject:{
-                required:true
-            },
-            w3lMessage:{
-                requied:true
             }
-        },
+        }
     })
 })
